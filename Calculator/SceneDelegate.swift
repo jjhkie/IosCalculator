@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Calculator
-//
-//  Created by 김진혁 on 2022/08/19.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
