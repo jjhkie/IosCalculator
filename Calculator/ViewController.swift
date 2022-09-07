@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     //숫자 키패드를 눌렀을 때 발생하는 이벤트
@@ -44,6 +43,7 @@ class ViewController: UIViewController {
         self.numberOutput.text = "0 "
     }
     
+    // Dot Button Click Event
     @IBAction func tapDotButton(_ sender: Any) {
         if self.displayNumber.count < 8, !self.displayNumber.contains("."){
             self.displayNumber += self.displayNumber.isEmpty ? "0." : "."
@@ -56,21 +56,27 @@ class ViewController: UIViewController {
         self.operation(.Divide)
     }
     
+    // Multiple Button Event
     @IBAction func tapMultipleButton(_ sender: UIButton) {
         self.operation(.Multiply)
     }
     
+    // Subtract Button Event
     @IBAction func tapSubtractButton(_ sender: UIButton) {
         self.operation(.Subtrack)
     }
+    
+    // Add Button Event
     @IBAction func tapAddButton(_ sender: UIButton) {
         self.operation(.Add)
     }
     
+    // Equal Button Event
     @IBAction func tapEqualButton(_ sender: UIButton) {
         self.operation(self.currentOperation)
     }
     
+    // Button Event 에서 넘겨받은 값에 따른 실행 Code
     func operation(_ operation: Operation){
         if self.currentOperation != .unknown{
             if !self.displayNumber.isEmpty{
